@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诺手-英雄联盟手游与端游最强上单攻略指南</title>
+    <meta name="description" content="本站提供《英雄联盟》与《英雄联盟手游》中诺克萨斯之手德莱厄斯的完整攻略，包含出装推荐、符文搭配、连招技巧、实战对线思路及克制关系分析。">
+    <meta name="keywords" content="诺手, 德莱厄斯, 英雄联盟, 上单攻略, 诺手出装, 诺手连招">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #990000;
+            --primary-dark: #660000;
+            --accent-color: #e6b800;
+            --bg-dark: #1a1a1a;
+            --bg-card: #252525;
+            --text-main: #ffffff;
+            --text-secondary: #cccccc;
+            --border-color: #333333;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/Noxus/1920/1080.jpg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Content Sections */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 16px;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #333;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 12px;
+            padding: 4px 8px;
+            background-color: rgba(153, 0, 0, 0.2);
+            color: var(--primary-color);
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        /* Skill Section */
+        .skill-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-card);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--text-secondary);
+        }
+
+        .skill-item:hover {
+            border-left-color: var(--accent-color);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .skill-info h3 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .skill-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .sidebar-box {
+            background-color: var(--bg-card);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+
+        .sidebar-box h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .build-list {
+            list-style: none;
+        }
+
+        .build-list li {
+            margin-bottom: 12px;
+        }
+
+        .build-list strong {
+            display: block;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .build-list span {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .nav-container {
+                justify-content: center;
+            }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Noxus<span>Guide</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#skills">技能解析</a></li>
+                    <li><a href="#build">出装符文</a></li>
+                    <li><a href="#counter">克制关系</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>诺克萨斯之手 · 德莱厄斯</h1>
+                <p>以血换血，以命搏命。掌握无情铁手与血之饥渴，成为上路无可争议的统治者。</p>
+                <div>
+                    <button class="btn" onclick="document.getElementById('build').scrollIntoView({behavior: 'smooth'})">查看出装</button>
+                    <button class="btn btn-outline" onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">学习连招</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Left Column: Content -->
+            <div class="content-area">
+                
+                <!-- Skills Section -->
+                <section id="skills">
+                    <h2 class="section-title">核心技能机制</h2>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-icon">Q</div>
+                            <div class="skill-info">
+                                <h3>无情铁手</h3>
+                                <p>向目标造成物理伤害并强制将其拉向自己。如果目标生命值低于一定比例，则造成额外伤害并施加出血效果。</p>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">W</div>
+                            <div class="skill-info">
+                                <h3>大杀四方</h3>
+                                <p>向四周挥舞武器，对附近敌人造成物理伤害。每击中一个敌人，诺手的伤害和攻速都会提升，并减少技能冷却时间。</p>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">E</div>
+                            <div class="skill-info">
+                                <h3>致残打击</h3>
+                                <p>对目标造成物理伤害，并降低其移动速度。如果目标已被出血效果标记，则该技能会造成双倍伤害。</p>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">R</div>
+                            <div class="skill-info">
+                                <h3>诺克萨斯断头台</h3>
+                                <p>蓄力后对目标造成物理伤害。伤害值基于目标已损失生命值的百分比。每成功斩杀一名敌方英雄，诺手的伤害上限和冷却时间都会降低。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Build Section -->
+                <section id="build">
+                    <h2 class="section-title">出装与符文推荐</h2>
+                    <div class="card-grid">
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/boots/400/200" alt="鞋子" class="card-img">
+                            <div class="card-body">
+                                <h3 class="card-title">核心鞋子</h3>
+                                <p class="card-desc">根据对线情况选择。布甲鞋针对物理型上单，水银鞋针对控制型或法师上单。</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/weapon/400/200" alt="黑切" class="card-img">
+                            <div class="card-body">
+                                <h3 class="card-title">三相之力</h3>
+                                <p class="card-desc">提升攻击力和冷却缩减，被动效果能增加诺手的机动性和技能伤害。</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/armor/400/200" alt="血手" class="card-img">
+                            <div class="card-body">
+                                <h3 class="card-title">斯特拉克的挑战护手</h3>
+                                <p class="card-desc">提供生命值和护甲，低血量时提供护盾，极大提升诺手的容错率和收割能力。</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Counter Section -->
+                <section id="counter">
+                    <h2 class="section-title">强势与弱势英雄</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>英雄</th>
+                                <th>关系分析</th>
+                                <th>应对策略</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>奎桑提</strong></td>
+                                <td><span class="tag">非常克制</span></td>
+                                <td>奎桑提有回复和免伤，诺手前期对拼劣势。需猥琐发育，等待E技能命中后再尝试W换血。</td>
+                            </tr>
+                            <tr>
+                                <td><strong>杰斯</strong></td>
+                                <td><span class="tag">较为克制</span></td>
+                                <td>远程手长英雄。利用Q技能回复血量，前期不要硬拼，利用E技能减速后接Q消耗。</td>
+                            </tr>
+                            <tr>
+                                <td><strong>武器大师</strong></td>
+                                <td><span class="tag">对等</span></td>
+                                <td>单挑能力极强。需要掌握Q技能的预判，利用W的AOE清兵和消耗，注意不要被E技能反手晕住。</td>
+                            </tr>
+                            <tr>
+                                <td><strong>剑魔</strong></td>
+                                <td><span class="tag">被克制</span></td>
+                                <td>有群体治疗和W的回血，血量越低越强。前期尽量不要让剑魔叠起被动，避免长时间对拼。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside>
+                <!-- Stats Box -->
+                <div class="sidebar-box">
+                    <h3>数据统计</h3>
+                    <div style="text-align: center; margin: 15px 0;">
+                        <div style="font-size: 32px; font-weight: bold; color: var(--accent-color);">52.8%</div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">BP率 (上单)</div>
+                    </div>
+                    <div style="text-align: center; margin: 15px 0;">
+                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">Top 5</div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">T1级英雄</div>
+                    </div>
+                </div>
+
+                <!-- Build List -->
+                <div class="sidebar-box">
+                    <h3>推荐出装顺序</h3>
+                    <ul class="build-list">
+                        <li>
+                            <strong>出门装</strong>
+                            <span>多兰盾 + 1红</span>
+                        </li>
+                        <li>
+                            <strong>核心装1</strong>
+                            <span>提亚马特 / 三相之力</span>
+                        </li>
+                        <li>
+                            <strong>核心装2</strong>
+                            <span>斯特拉克的挑战护手</span>
+                        </li>
+                        <li>
+                            <strong>核心装3</strong>
+                            <span>死亡之舞 / 永恒黑切</span>
+                        </li>
+                        <li>
+                            <strong>鞋子</strong>
+                            <span>布甲鞋 / 水银鞋</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tips Box -->
+                <div class="sidebar-box">
+                    <h3>实战小贴士</h3>
+                    <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 10px;">
+                        <strong>Q技能距离：</strong> Q技能有最大施法距离，不要贪图斩杀线而走出安全距离。
+                    </p>
+                    <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 10px;">
+                        <strong>连招顺序：</strong> 常用连招为 E-A-Q-W-R，利用E减速后接A平A触发出血，再用Q拉近距离，最后开大收割。
+                    </p>
+                    <p style="font-size: 14px; color: var(--text-secondary);">
+                        <strong>斩杀线计算：</strong> 诺手的斩杀线与目标当前生命值和已损失生命值有关，熟练计算斩杀线能让你在团战中打出成吨伤害。
+                    </p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- FAQ Section -->
+        <section id="faq" style="max-width: 800px; margin: 0 auto 60px auto; padding: 0 var(--spacing-unit);">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="margin-bottom: 10px; font-size: 16px;">诺手前期怎么对拼？</h3>
+                    <p style="font-size: 14px; color: var(--text-secondary);">诺手前期伤害极高，但缺乏回复。出门装多兰盾配合Q技能回复，在对手血量低于50%时，尝试利用E技能减速后接Q拉回，开启W消耗，有机会直接斩杀。</p>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 15px;">
+                <div class="card-body">
+                    <h3 style="margin-bottom: 10px; font-size: 16px;">诺手打什么上单好打？</h3>
+                    <p style="font-size: 14px; color: var(--text-secondary);">诺手非常擅长打近战短手英雄，如剑姬、青钢影、腕豪等。这些英雄在近身缠斗时容易被诺手的出血效果和W技能AOE压制。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">联系方式</a>
+            </div>
+            <p>&copy; 2023 Noxus Guide. All rights reserved. 本站为攻略资讯站点，非官方游戏页面。</p>
+        </div>
+    </footer>
+
+</body>
+                      </html>
