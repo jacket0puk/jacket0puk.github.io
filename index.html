@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="万象城美食指南：汇集万象城购物中心内高端餐饮、特色餐厅及美食攻略。提供餐厅查询、人均消费、特色菜品推荐及就餐环境介绍，助您轻松享受万象城美食之旅。">
+    <meta name="keywords" content="万象城美食,万象城餐厅,购物中心美食,高端餐饮,万象城美食攻略">
+    <title>万象城美食-高端购物中心餐饮指南与特色餐厅推荐</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c0392b;
+            --secondary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-light: #fdfdfd;
+            --bg-gray: #f4f6f7;
+            --text-main: #333333;
+            --text-light: #7f8c8d;
+            --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #a93226;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(192, 57, 43, 0.3);
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/foodhall/1600/900');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Filters / Search */
+        .search-bar {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow-card);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* Cuisines Grid */
+        .cuisines-section {
+            padding: 80px 0;
+        }
+
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .cuisine-card {
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cuisine-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cuisine-img {
+            height: 140px;
+            width: 100%;
+        }
+
+        .cuisine-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .cuisine-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .cuisine-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Featured Restaurants */
+        .featured-section {
+            background-color: var(--bg-gray);
+            padding: 80px 0;
+        }
+
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .restaurant-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            height: 220px;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-footer {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-tag {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .price-tag span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* Dining Guide / Tips */
+        .guide-section {
+            padding: 80px 0;
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .guide-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .guide-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .guide-list {
+            margin-bottom: 30px;
+        }
+
+        .guide-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .guide-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .guide-image {
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-gray);
+            padding: 80px 0;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius-md);
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: #666;
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                padding: 0 15px;
+            }
+            
+            nav {
+                display: none; /* Simplified for static demo */
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>✦</span> 万象城美食
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#cuisines" class="active">美食分类</a></li>
+                    <li><a href="#featured">热门餐厅</a></li>
+                    <li><a href="#guide">就餐指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>探索万象城味蕾之旅</h1>
+                <p>汇集高端餐饮与地道风味，一站式满足您的挑剔味觉</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="搜索餐厅名称、菜系或特色...">
+                    <button>搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cuisines Section -->
+        <section id="cuisines" class="cuisines-section">
+            <div class="container">
+                <h2 class="section-title">美食分类导航</h2>
+                <p class="section-subtitle">按菜系快速找到心仪的餐厅，从精致料理到休闲快餐应有尽有</p>
+                <div class="cuisine-grid">
+                    <div class="cuisine-card">
+                        <img src="https://picsum.photos/seed/japanese/300/200" alt="日料" class="cuisine-img">
+                        <div class="cuisine-info">
+                            <h3>精致日料</h3>
+                            <p>刺身、寿司、居酒屋</p>
+                        </div>
+                    </div>
+                    <div class="cuisine-card">
+                        <img src="https://picsum.photos/seed/chinese/300/200" alt="中餐" class="cuisine-img">
+                        <div class="cuisine-info">
+                            <h3>创意中餐</h3>
+                            <p>本帮菜、粤菜、融合菜</p>
+                        </div>
+                    </div>
+                    <div class="cuisine-card">
+                        <img src="https://picsum.photos/seed/steak/300/200" alt="西餐" class="cuisine-img">
+                        <div class="cuisine-info">
+                            <h3>高端西餐</h3>
+                            <p>牛排、意餐、法式甜点</p>
+                        </div>
+                    </div>
+                    <div class="cuisine-card">
+                        <img src="https://picsum.photos/seed/burger/300/200" alt="快餐" class="cuisine-img">
+                        <div class="cuisine-info">
+                            <h3>休闲快餐</h3>
+                            <p>汉堡、披萨、轻食简餐</p>
+                        </div>
+                    </div>
+                    <div class="cuisine-card">
+                        <img src="https://picsum.photos/seed/bakery/300/200" alt="烘焙" class="cuisine-img">
+                        <div class="cuisine-info">
+                            <h3>特色烘焙</h3>
+                            <p>法棍、蛋糕、咖啡</p>
+                        </div>
+                    </div>
+                    <div class="cuisine-card">
+                        <img src="https://picsum.photos/seed/icecream/300/200" alt="甜品" class="cuisine-img">
+                        <div class="cuisine-info">
+                            <h3>网红甜品</h3>
+                            <p>冰淇淋、奶茶、果茶</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Restaurants -->
+        <section id="featured" class="featured-section">
+            <div class="container">
+                <h2 class="section-title">热门餐厅推荐</h2>
+                <p class="section-subtitle">人气爆棚，口碑载道的万象城必吃榜</p>
+                
+                <div class="restaurant-grid">
+                    <!-- Card 1 -->
+                    <article class="restaurant-card">
+                        <div class="card-image-wrapper">
+                            <span class="card-badge">必吃榜</span>
+                            <img src="https://picsum.photos/seed/restaurant1/400/300" alt="蓝鳍餐厅">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📍 5F 西区</span>
+                                <span>⏰ 11:00-22:00</span>
+                            </div>
+                            <h3 class="card-title">蓝鳍牛排馆</h3>
+                            <p class="card-desc">选用澳洲M9+和牛，现场煎制，搭配精选红酒，为您呈现极致的西式浪漫体验。</p>
+                            <div class="card-footer">
+                                <div class="price-tag">¥300<span>/人</span></div>
+                                <a href="#" class="btn btn-primary" style="padding: 6px 16px; font-size: 0.9rem;">预订座位</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="restaurant-card">
+                        <div class="card-image-wrapper">
+                            <span class="card-badge">人气王</span>
+                            <img src="https://picsum.photos/seed/restaurant2/400/300" alt="云隐·私房菜">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📍 3F 中庭</span>
+                                <span>⏰ 10:30-21:30</span>
+                            </div>
+                            <h3 class="card-title">云隐·私房菜</h3>
+                            <p class="card-desc">隐于繁华之中的静谧空间，主打粤式传统与创新融合菜，食材新鲜，口味地道。</p>
+                            <div class="card-footer">
+                                <div class="price-tag">¥280<span>/人</span></div>
+                                <a href="#" class="btn btn-primary" style="padding: 6px 16px; font-size: 0.9rem;">预订座位</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="restaurant-card">
+                        <div class="card-image-wrapper">
+                            <span class="card-badge">新开业</span>
+                            <img src="https://picsum.photos/seed/restaurant3/400/300" alt="极乐鸟·日式烤肉">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📍 4F 东区</span>
+                                <span>⏰ 17:00-次日02:00</span>
+                            </div>
+                            <h3 class="card-title">极乐鸟·日式烤肉</h3>
+                            <p class="card-desc">炭火炙烤，肉香四溢。提供多种部位的和牛，搭配日式清酒，畅享深夜食堂。</p>
+                            <div class="card-footer">
+                                <div class="price-tag">¥350<span>/人</span></div>
+                                <a href="#" class="btn btn-primary" style="padding: 6px 16px; font-size: 0.9rem;">预订座位</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dining Guide -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <div class="guide-container">
+                    <div class="guide-content">
+                        <h2>万象城就餐实用指南</h2>
+                        <p>为了帮助您在万象城获得最佳的用餐体验，我们整理了以下实用信息和建议。</p>
+                        
+                        <ul class="guide-list">
+                            <li><strong>取号等候：</strong>热门餐厅建议提前电话预约或使用线上取号系统，避免长时间排队。</li>
+                            <li><strong>停车信息：</strong>万象城拥有地下大型停车场，B1-B3层为餐饮专用区，方便用餐后直接驾车离开。</li>
+                            <li><strong>儿童设施：</strong>多家餐厅提供儿童餐椅及高脚椅，部分亲子餐厅设有专门的游乐区。</li>
+                            <li><strong>支付方式：</strong>支持微信、支付宝及银联卡，部分餐厅支持外币刷卡。</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">查看更多餐厅详情</a>
+                    </div>
+                    <div class="guide-image">
+                        <img src="https://picsum.photos/seed/dining/600/400" alt="万象城美食环境">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                <p class="section-subtitle">关于万象城美食的常见疑问解答</p>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">万象城有哪些特色美食街区？</div>
+                        <div class="faq-answer">
+                            万象城B1层设有“环球美食汇”，汇集了各国街头小吃；3层至5层则集中了众多知名品牌餐厅，涵盖高端餐饮与休闲简餐。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">周末用餐需要提前预订吗？</div>
+                        <div class="faq-answer">
+                            周末及节假日是用餐高峰期，建议提前通过餐厅官方小程序或电话进行预订，以确保有座位。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">是否提供外带服务？</div>
+                        <div class="faq-answer">
+                            大部分餐厅提供外带服务，您可以在结账时向店员咨询具体的外带流程和包装要求。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>万象城美食</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">专注为您发现城市中最优质的餐饮体验，打造一站式美食生活指南。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#cuisines">美食分类</a></li>
+                        <li><a href="#featured">热门推荐</a></li>
+                        <li><a href="#guide">就餐指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">商家入驻</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">关于我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 万象城美食指南 版权所有. 本站为演示设计，不涉及真实商业运营。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth Scroll for Navigation Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+                              </html>
