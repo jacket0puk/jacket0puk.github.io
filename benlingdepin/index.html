@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本领的拼音 - 汉字拼音查询与发音指南</title>
+    <meta name="description" content="本领的拼音是什么？本(lěn)、领(lǐng)。本页面提供汉字“本领”的详细拼音标注、声调说明、声母韵母分析以及相关词语组合和例句，帮助您准确掌握读音与用法。">
+    <meta name="keywords" content="本领的拼音, 本领读音, 本领 lěn lǐng, 汉字拼音查询">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --bg-color: #ffffff;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            letter-spacing: -0.025em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .pinyin-display {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: #fff;
+            padding: 1.5rem 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .pinyin-char {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .pinyin-char::after {
+            content: attr(data-pinyin);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .pinyin-char.wrong::after {
+            color: #ef4444;
+        }
+
+        .pinyin-char.correct::after {
+            color: #10b981;
+        }
+
+        .pinyin-divider {
+            font-size: 1.5rem;
+            color: var(--border-color);
+        }
+
+        .pinyin-note {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Detailed Breakdown */
+        .breakdown-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .char-card {
+            background: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .char-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .char-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+        }
+
+        .char-name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .char-pinyin {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .char-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .meta-item {
+            background: #fff;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .meta-label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Usage & Examples */
+        .usage-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .example-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .example-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+
+        .example-sentence {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .example-translation {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Common Confusions */
+        .confusion-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--secondary-color);
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background-color: #e2e8f0;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f8fafc;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .pinyin-display {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .pinyin-char::after {
+                bottom: auto;
+                top: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: var(--text-secondary);
+            }
+            .pinyin-char.correct::after, .pinyin-char.wrong::after {
+                color: var(--text-secondary);
+            }
+            .header-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span>拼音查询</span>
+            </a>
+            <nav>
+                <a href="#" style="color: var(--text-main); text-decoration: none; font-size: 0.9rem;">首页</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">“本领”的拼音</h1>
+            <p class="hero-subtitle">掌握汉字读音，提升语言表达准确性</p>
+            
+            <div class="pinyin-display">
+                <div class="pinyin-char correct" data-pinyin="běn">本</div>
+                <div class="pinyin-divider">·</div>
+                <div class="pinyin-char correct" data-pinyin="lǐng">领</div>
+            </div>
+            <p class="pinyin-note">běn lǐng</p>
+        </section>
+
+        <!-- Detailed Breakdown -->
+        <section class="breakdown-section">
+            <h2 class="section-title">逐字解析</h2>
+            
+            <!-- Char 1: 本 -->
+            <article class="char-card">
+                <div class="char-header">
+                    <span class="char-name">本</span>
+                    <span class="char-pinyin">běn</span>
+                </div>
+                <p class="char-desc">“本”字意为草木的根，引申为基础、根本、原来的。在“本领”一词中，指代事物的基础或根基。</p>
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <span class="meta-label">声调</span>
+                        <span class="meta-value">第三声 (上声)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">声母</span>
+                        <span class="meta-value">b (双唇音)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">韵母</span>
+                        <span class="meta-value">en</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">发音提示</span>
+                        <span class="meta-value">发音短促有力</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Char 2: 领 -->
+            <article class="char-card">
+                <div class="char-header">
+                    <span class="char-name">领</span>
+                    <span class="char-pinyin">lǐng</span>
+                </div>
+                <p class="char-desc">“领”字本义为颈项，引申为衣领，再引申为带领、管辖、理解、懂得。在“本领”一词中，指代能力、技能。</p>
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <span class="meta-label">声调</span>
+                        <span class="meta-value">第三声 (上声)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">声母</span>
+                        <span class="meta-value">l (边音)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">韵母</span>
+                        <span class="meta-value">ing</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">发音提示</span>
+                        <span class="meta-value">发音清晰响亮</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Usage & Examples -->
+        <section class="usage-section">
+            <h2 class="section-title">用法与例句</h2>
+            <div class="example-grid">
+                <div class="example-item">
+                    <p class="example-sentence">他拥有一身过硬的<strong>本领</strong>，解决复杂问题游刃有余。</p>
+                    <p class="example-translation">He possesses a set of strong skills and can handle complex problems with ease.</p>
+                </div>
+                <div class="example-item">
+                    <p class="example-sentence">无论遇到什么困难，只要发挥自己的<strong>本领</strong>，总能找到出路。</p>
+                    <p class="example-translation">No matter what difficulties are encountered, as long as one uses their skills, a way out can always be found.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Confusions -->
+        <section class="confusion-section">
+            <h2 class="section-title">易混淆词辨析</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th width="30%">词语</th>
+                        <th width="35%">拼音</th>
+                        <th width="35%">含义区别</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>本令</strong></td>
+                        <td>běn lìng</td>
+                        <td>指命令、号令，多用于军事或正式场合。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>本令</strong></td>
+                        <td>běn líng</td>
+                        <td>指原来的计划或打算。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>本领</strong></td>
+                        <td>běn lǐng</td>
+                        <td>指技能、才干，侧重于实际操作能力。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>本页面旨在提供准确的汉字拼音查询服务，帮助用户规范语言使用。</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">&copy; 2023 拼音查询指南</p>
+    </footer>
+
+</body>
+</html>
