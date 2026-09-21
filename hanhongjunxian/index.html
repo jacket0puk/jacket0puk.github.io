@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩红军衔信息查询与解读，包含军衔等级划分、晋升机制、历史演变及军衔标志特征详解。">
+    <meta name="keywords" content="韩红军衔, 军衔等级, 朝鲜人民军, 军事编制, 韩国军队, 军衔标志">
+    <title>韩红军衔-朝鲜人民军军衔体系与标志详解</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-red: #C8102E;
+            --primary-dark: #8B0000;
+            --primary-gold: #FFD700;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f4f4f4;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-red);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--primary-gold);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* 主要内容区 */
+        main {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-red);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* 等级概览网格 */
+        .rank-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .rank-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-red);
+        }
+
+        .rank-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .rank-badge {
+            display: inline-block;
+            background-color: rgba(200, 16, 46, 0.1);
+            color: var(--primary-red);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .rank-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .rank-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* 特殊军衔展示 */
+        .special-ranks {
+            background-color: var(--bg-white);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 80px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .special-ranks h2 {
+            font-size: 22px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .special-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .special-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .special-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* 军衔标志说明 */
+        .insignia-guide {
+            margin-bottom: 80px;
+        }
+
+        .insignia-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .insignia-text h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .insignia-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .insignia-image {
+            background-color: #eee;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .insignia-image::before {
+            content: '示意图';
+            position: relative;
+            z-index: 1;
+            font-weight: bold;
+            background: rgba(255,255,255,0.8);
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: var(--bg-white);
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary-red);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            padding-left: 10px;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-red);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .insignia-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span>军衔百科</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#overview">等级概览</a>
+                <a href="#special">特殊军衔</a>
+                <a href="#insignia">标志说明</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>韩红军衔</h1>
+            <p>深入解析朝鲜人民军现役军衔体系，从士兵到元帅的完整晋升路径与标志特征。</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>6</h3>
+                    <p>将官等级</p>
+                </div>
+                <div class="stat-item">
+                    <h3>11</h3>
+                    <p>校官等级</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4</h3>
+                    <p>士兵等级</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 等级概览 -->
+        <section id="overview">
+            <div class="section-title">
+                <h2>朝鲜人民军军衔体系</h2>
+                <p>朝鲜人民军实行单一的军衔制度，适用于所有兵种，区分陆军、海军、空军和战略火箭军等。</p>
+            </div>
+
+            <div class="rank-grid">
+                <!-- 将官 -->
+                <article class="rank-card">
+                    <span class="rank-badge">将官</span>
+                    <h3>高级将领</h3>
+                    <p>包括元帅、次帅、大将、次帅（注：次帅与上将并列，但实际权力中次帅级别更高）。这些军衔通常授予总参谋长、各军种司令员及重要军区指挥官。</p>
+                </article>
+
+                <!-- 校官 -->
+                <article class="rank-card">
+                    <span class="rank-badge">校官</span>
+                    <h3>中级军官</h3>
+                    <p>包括上校、中校、少校。主要负责团级、旅级单位的指挥与管理工作，是军队的中坚力量。</p>
+                </article>
+
+                <!-- 尉官 -->
+                <article class="rank-card">
+                    <span class="rank-badge">尉官</span>
+                    <h3>初级军官</h3>
+                    <p>包括上尉、中尉、少尉。通常是营级指挥员或技术军官，是培养军队骨干的基础。</p>
+                </article>
+
+                <!-- 军士长 -->
+                <article class="rank-card">
+                    <span class="rank-badge">军士长</span>
+                    <h3>士官骨干</h3>
+                    <p>包括上士、中士、下士。负责基层部队的具体训练、管理和技能传授，是士兵与军官之间的桥梁。</p>
+                </article>
+
+                <!-- 士兵 -->
+                <article class="rank-card">
+                    <span class="rank-badge">士兵</span>
+                    <h3>义务兵役制</h3>
+                    <p>包括上等兵、下士。朝鲜实行义务兵役制，服役期较长，军衔晋升速度相对较慢，主要体现服役年限和表现。</p>
+                </article>
+
+                <!-- 民官 -->
+                <article class="rank-card">
+                    <span class="rank-badge">军内职务</span>
+                    <h3>文职与职务</h3>
+                    <p>除了现役军人军衔外，朝鲜人民军还设有文职干部军衔（如中将、少将），以及专门的军内职务名称（如中队长、大队长），职务与军衔并不完全挂钩。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 特殊军衔 -->
+        <section id="special" class="special-ranks">
+            <h2>特殊军衔与荣誉称号</h2>
+            <div class="special-list">
+                <div class="special-item">
+                    <div class="special-icon">1</div>
+                    <div>
+                        <h4>共和国英雄</h4>
+                        <p style="font-size:14px; color:#666; margin-top:5px;">授予对国家有重大贡献的军人和公民，这是朝鲜最高的荣誉称号，佩戴特殊勋章。</p>
+                    </div>
+                </div>
+                <div class="special-item">
+                    <div class="special-icon">2</div>
+                    <div>
+                        <h4>人民武力部副部长</h4>
+                        <p style="font-size:14px; color:#666; margin-top:5px;">该职位通常由次帅级高级将领担任，是军队内的最高行政职务之一。</p>
+                    </div>
+                </div>
+                <div class="special-item">
+                    <div class="special-icon">3</div>
+                    <div>
+                        <h4>朝鲜劳动党中央军事委员会副委员长</h4>
+                        <p style="font-size:14px; color:#666; margin-top:5px;">掌握军队最高指挥权的职务，通常由次帅或元帅担任。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 标志说明 -->
+        <section id="insignia" class="insignia-guide">
+            <div class="section-title">
+                <h2>军衔标志特征</h2>
+            </div>
+            <div class="insignia-layout">
+                <div class="insignia-text">
+                    <h3>标志设计风格</h3>
+                    <p>朝鲜人民军军衔标志设计极具辨识度，主要特点包括：</p>
+                    <ul style="margin-left: 20px; color: var(--text-light); margin-bottom: 20px;">
+                        <li><strong>五角星元素：</strong>所有将官军衔标志的中心均为一颗金色的五角星，象征革命精神。</li>
+                        <li><strong>颜色区分：</strong>元帅、次帅使用纯金色；大将至上将使用金色底配红色边框；少将至少尉使用银色底配红色边框。</li>
+                        <li><strong>袖章设计：</strong>军士和士兵的军衔通常显示在袖口或衣领处，采用细杠和星徽的组合。</li>
+                        <li><strong>海军特色：</strong>海军军官的军衔标志中心为双锚图案，而非五角星。</li>
+                    </ul>
+                    <p>随着时代发展，部分军衔标志在细节上有所调整，但整体框架保持稳定。</p>
+                </div>
+                <div class="insignia-image">
+                    <span>军衔标志示意图区域</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <div class="section-title">
+                <h2>常见问题</h2>
+            </div>
+            <div class="container" style="max-width: 800px;">
+                <div class="faq-item">
+                    <div class="faq-question">朝鲜人民军的元帅有几个等级？</div>
+                    <div class="faq-answer">
+                        朝鲜人民军的元帅军衔包括：元帅、次帅（又称次帅）、大将。其中次帅实际上比大将高，但在历史上元帅和大将的称呼有时会根据政治需要互换使用。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">普通士兵的军衔如何晋升？</div>
+                    <div class="faq-answer">
+                        朝鲜实行严格的兵役制，士兵从入伍时的下士（或上等兵）开始，根据服役年限、军事训练成绩和政治表现进行晋升。晋升周期通常较长，需要经过层层考核。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">海军和空军的军衔标志有什么不同？</div>
+                    <div class="faq-answer">
+                        海军军官的军衔标志中心图案是双锚，而非陆军和空军的五角星。空军虽然也使用五角星，但有时会有特殊的徽章装饰，具体以官方发布为准。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        本站致力于提供详尽的军事历史与军衔制度资料，内容仅供学习与参考，不涉及任何现实政治立场。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#overview">等级概览</a></li>
+                        <li><a href="#special">特殊军衔</a></li>
+                        <li><a href="#insignia">标志说明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>免责声明</h4>
+                    <ul>
+                        <li>资料整理自公开历史档案</li>
+                        <li>军衔信息可能随时间变动</li>
+                        <li>本站不承担数据准确性责任</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 军衔百科 - 朝鲜人民军军衔体系研究. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
