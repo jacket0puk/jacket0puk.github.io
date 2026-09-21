@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>东方卫视2018跨年晚会-盛典回顾与精彩集锦</title>
+    <meta name="description" content="东方卫视2018跨年晚会在上海梅赛德斯-奔驰文化中心盛大举行，汇集众多明星大咖，带来震撼视听盛宴。本站提供晚会节目单、精彩集锦、明星阵容及观看指南。">
+    <meta name="keywords" content="东方卫视2018跨年晚会,东方卫视跨年,2018跨年晚会,上海跨年晚会,跨年盛典">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d9001b; /* 东方卫视红 */
+            --secondary-color: #1a1a1a;
+            --accent-color: #f5c518; /* 金色点缀 */
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f9f9f9;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            height: var(--header-height);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .cta-btn:hover {
+            background-color: #b3000f;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/dongfang2018/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background-color: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .btn-large {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .btn-large:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(217, 0, 27, 0.4);
+        }
+
+        /* Schedule Section */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .schedule-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .schedule-card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .time-badge {
+            background-color: #ffebeb;
+            color: var(--primary-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .artist-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .artist-tag {
+            background-color: #f0f0f0;
+            color: #555;
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 3px;
+        }
+
+        /* Highlights Section */
+        .highlights-section {
+            background-color: white;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .highlight-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            cursor: pointer;
+        }
+
+        .highlight-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .play-icon::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid white;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 5px;
+        }
+
+        .highlight-item:hover .play-icon {
+            background-color: var(--primary-color);
+        }
+
+        .highlight-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px 15px 10px;
+            color: white;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        /* Reviews Section */
+        .review-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-color: #ddd;
+        }
+
+        .user-info h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .user-info span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .stars {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #888;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                <span>东方卫视</span>2018跨年
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#highlights">精彩回顾</a></li>
+                    <li><a href="#schedule">节目单</a></li>
+                    <li><a href="#reviews">观众评价</a></li>
+                </ul>
+            </nav>
+            <a href="#watch" class="cta-btn">观看直播</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-tags">
+                    <span class="tag">上海梅赛德斯-奔驰文化中心</span>
+                    <span class="tag">年度盛典</span>
+                </div>
+                <h1>东方卫视2018跨年晚会</h1>
+                <p>2017-2018年度东方卫视跨年晚会，一场汇聚华语乐坛顶尖力量的视听盛宴，邀您共迎新年。</p>
+                <a href="#highlights" class="btn-large">浏览精彩瞬间</a>
+            </div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section id="highlights" class="section highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">年度精彩瞬间</h2>
+                    <p class="section-subtitle">重温跨年夜的高光时刻，感受舞台魅力</p>
+                </div>
+                <div class="highlight-grid">
+                    <div class="highlight-item">
+                        <img src="https://picsum.photos/seed/concert1/600/338" alt="开场表演">
+                        <div class="play-icon"></div>
+                        <div class="highlight-caption">
+                            <h4>震撼开场秀</h4>
+                            <p>大型歌舞《光影中国》</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <img src="https://picsum.photos/seed/concert2/600/338" alt="明星合唱">
+                        <div class="play-icon"></div>
+                        <div class="highlight-caption">
+                            <h4>经典金曲串烧</h4>
+                            <p>流行与经典的碰撞</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <img src="https://picsum.photos/seed/concert3/600/338" alt="舞蹈表演">
+                        <div class="play-icon"></div>
+                        <div class="highlight-caption">
+                            <h4>国风舞蹈秀</h4>
+                            <p>《只此青绿》舞台版</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <img src="https://picsum.photos/seed/concert4/600/338" alt="互动环节">
+                        <div class="play-icon"></div>
+                        <div class="highlight-caption">
+                            <h4>跨年倒计时</h4>
+                            <p>全球同步倒数时刻</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">节目单亮点</h2>
+                    <p class="section-subtitle">精心编排的节目单，带您提前了解晚会流程</p>
+                </div>
+                <div class="schedule-grid">
+                    <article class="schedule-card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/artist1/400/250" alt="TFBOYS表演">
+                        </div>
+                        <div class="card-body">
+                            <span class="time-badge">20:00 - 20:15</span>
+                            <h3 class="card-title">《青春修炼手册》</h3>
+                            <p class="card-desc">TFBOYS带来活力四射的开场表演，点燃全场气氛。</p>
+                            <div class="artist-list">
+                                <span class="artist-tag">TFBOYS</span>
+                                <span class="artist-tag">舞团</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="schedule-card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/artist2/400/250" alt="邓紫棋表演">
+                        </div>
+                        <div class="card-body">
+                            <span class="time-badge">20:30 - 20:45</span>
+                            <h3 class="card-title">《光年之外》</h3>
+                            <p class="card-desc">邓紫棋深情献唱，展现跨年夜的浪漫氛围。</p>
+                            <div class="artist-list">
+                                <span class="artist-tag">邓紫棋</span>
+                                <span class="artist-tag">交响乐团</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="schedule-card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/artist3/400/250" alt="鹿晗表演">
+                        </div>
+                        <div class="card-body">
+                            <span class="time-badge">21:00 - 21:15</span>
+                            <h3 class="card-title">《我们的明天》</h3>
+                            <p class="card-desc">鹿晗携手金玟岐，演绎关于未来的温暖旋律。</p>
+                            <div class="artist-list">
+                                <span class="artist-tag">鹿晗</span>
+                                <span class="artist-tag">金玟岐</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="schedule-card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/artist4/400/250" alt="周杰伦表演">
+                        </div>
+                        <div class="card-body">
+                            <span class="time-badge">21:30 - 21:45</span>
+                            <h3 class="card-title">《告白气球》</h3>
+                            <p class="card-desc">周杰伦压轴登场，带领观众倒数跨入2018年。</p>
+                            <div class="artist-list">
+                                <span class="artist-tag">周杰伦</span>
+                                <span class="artist-tag">弦乐团</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="section stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>6.5亿</h3>
+                        <p>全网总播放量</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>150+</h3>
+                        <p>明星阵容</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>40+</h3>
+                        <p>精彩节目</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>5</h3>
+                        <p>小时直播时长</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">观众评价</h2>
+                    <p class="section-subtitle">看看观众对这场跨年盛会的反馈</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://picsum.photos/seed/user1/100/100" alt="用户头像" class="avatar">
+                        <div class="user-info">
+                            <h4>快乐追星人</h4>
+                            <span>发布于 2018年1月1日</span>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>今年的东方卫视跨年晚会太震撼了！舞台效果非常高级，灯光配合音乐简直完美。尤其是TFBOYS的《青春修炼手册》，现场气氛直接拉满，看得我热血沸腾！强烈推荐大家回顾视频。</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://picsum.photos/seed/user2/100/100" alt="用户头像" class="avatar">
+                        <div class="user-info">
+                            <h4>音乐爱好者小张</h4>
+                            <span>发布于 2018年1月2日</span>
+                            <div class="stars">★★★★☆</div>
+                        </div>
+                    </div>
+                    <p>整体编排很用心，既有流行金曲也有国风元素。邓紫棋的表演一如既往的稳，声音非常有穿透力。倒计时环节也很感人，感觉整个上海都在为新年欢呼。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="watch" class="section" style="background-color: #ffebeb; text-align: center;">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 20px; color: #d9001b;">准备好重温盛典了吗？</h2>
+                <p style="margin-bottom: 30px; font-size: 1.1rem;">点击下方按钮，查看完整节目单及精彩集锦。</p>
+                <a href="#" class="cta-btn" style="font-size: 1.2rem; padding: 12px 40px;">查看完整节目单</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>东方卫视2018跨年晚会</h2>
+                    <p>汇聚华语乐坛顶尖力量，打造最具影响力的跨年盛典。让我们在2018年开启新的篇章。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>节目导航</h4>
+                    <ul>
+                        <li><a href="#">精彩回顾</a></li>
+                        <li><a href="#">明星阵容</a></li>
+                        <li><a href="#">幕后花絮</a></li>
+                        <li><a href="#">历年回顾</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">活动简介</a></li>
+                        <li><a href="#">合作联系</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">抖音号</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2018-2024 东方卫视跨年晚会专题页. 仅供展示与回顾使用，非官方实时直播页面。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                                  </html>
