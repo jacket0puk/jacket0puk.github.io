@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="极点男色专注于男性审美与潮流文化的深度探索，提供高质量男性摄影作品赏析、时尚穿搭指南、健身美学及生活方式资讯，打造男性专属的视觉与精神空间。">
+    <meta name="keywords" content="极点男色,男性摄影,健身穿搭,潮流文化,审美指南">
+    <title>极点男色-男性审美与潮流文化的深度探索空间</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #d4af37;
+            --bg-color: #f8f8f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-color: #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: #000;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #b5952f;
+            transform: translateY(-2px);
+        }
+
+        /* Categories */
+        .categories {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .category-img {
+            height: 180px;
+            width: 100%;
+        }
+
+        .category-info {
+            padding: 20px;
+        }
+
+        .category-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .category-info p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Featured Gallery */
+        .gallery-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-tag {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: 600;
+            width: fit-content;
+            margin-bottom: 10px;
+            border-radius: 2px;
+        }
+
+        .gallery-title {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            padding: 60px 0;
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .guide-main {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .guide-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .guide-sidebar-item {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .guide-sidebar-item h4 {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .guide-sidebar-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .guide-sidebar-item a {
+            font-size: 13px;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .guide-list li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .guide-list li:last-child {
+            border-bottom: none;
+        }
+
+        .guide-list h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .guide-list p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #999;
+            padding: 60px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                height: auto;
+                padding: 15px 0;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">极点<span>男色</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">摄影赏析</a></li>
+                    <li><a href="#">时尚穿搭</a></li>
+                    <li><a href="#">健身美学</a></li>
+                    <li><a href="#">生活方式</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="https://picsum.photos/seed/menfashion/1920/1080" alt="男性时尚与审美" class="hero-bg">
+            <div class="hero-content">
+                <h1>探索男性魅力的美学边界</h1>
+                <p>从光影艺术到生活态度，极点男色致力于呈现当代男性的多元魅力与时尚风貌。</p>
+                <a href="#gallery" class="btn">浏览精选作品</a>
+            </div>
+        </section>
+
+        <section class="categories container">
+            <h2 class="section-title">核心栏目</h2>
+            <div class="category-grid">
+                <article class="category-card">
+                    <img src="https://picsum.photos/seed/menstyle/400/300" alt="时尚穿搭" class="category-img">
+                    <div class="category-info">
+                        <h3>时尚穿搭</h3>
+                        <p>解析街头潮流与绅士风度，提供实用的造型建议与搭配指南。</p>
+                    </div>
+                </article>
+                <article class="category-card">
+                    <img src="https://picsum.photos/seed/gym/400/300" alt="健身美学" class="category-img">
+                    <div class="category-info">
+                        <h3>健身美学</h3>
+                        <p>记录汗水与坚持，分享增肌减脂的科学方法与身体线条美学。</p>
+                    </div>
+                </article>
+                <article class="category-card">
+                    <img src="https://picsum.photos/seed/art/400/300" alt="摄影艺术" class="category-img">
+                    <div class="category-info">
+                        <h3>摄影艺术</h3>
+                        <p>深度解读男性摄影的构图、光影与色彩，发现镜头下的男性力量。</p>
+                    </div>
+                </article>
+                <article class="category-card">
+                    <img src="https://picsum.photos/seed/lifestyle/400/300" alt="生活方式" class="category-img">
+                    <div class="category-info">
+                        <h3>生活方式</h3>
+                        <p>涵盖香水、腕表、旅行与家居，提升生活品质与个人品味。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">视觉精选</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/man1/400/533" alt="都市光影">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">摄影</span>
+                            <h3 class="gallery-title">都市夜归人</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/man2/400/533" alt="自然肌理">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">人像</span>
+                            <h3 class="gallery-title">原野探索</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/man3/400/533" alt="商务绅士">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">穿搭</span>
+                            <h3 class="gallery-title">正装礼仪</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/man4/400/533" alt="运动活力">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">健身</span>
+                            <h3 class="gallery-title">速度与激情</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide-section container">
+            <h2 class="section-title">审美与风尚指南</h2>
+            <div class="guide-container">
+                <div class="guide-main">
+                    <h3>如何构建个人独特的男性风格？</h3>
+                    <p style="margin-top: 15px; color: #666;">风格不仅仅是穿衣，更是对自我的认知。在极点男色，我们强调“自信”与“舒适”的平衡。建议从基础的色系入手，如黑白灰或大地色系，再通过配饰（如手表、皮带、眼镜）来提升质感。不要盲目追逐潮流，适合自己的才是最好的。</p>
+                    <ul class="guide-list" style="margin-top: 20px;">
+                        <li>
+                            <h3>了解自己的身形特征</h3>
+                            <p>根据肩宽、腰身比例选择剪裁合适的服装，扬长避短。</p>
+                        </li>
+                        <li>
+                            <h3>注重细节处理</h3>
+                            <p>鞋子的干净程度、衣领的平整度往往决定整体造型的成败。</p>
+                        </li>
+                        <li>
+                            <h3>保持良好的体态</h3>
+                            <p>体态是男性的第二张脸，挺拔的身姿比任何服饰都更具吸引力。</p>
+                        </li>
+                    </ul>
+                </div>
+                <aside class="guide-sidebar">
+                    <div class="guide-sidebar-item">
+                        <h4>热门话题</h4>
+                        <p>夏季清爽穿搭法则</p>
+                        <a href="#">阅读更多 →</a>
+                    </div>
+                    <div class="guide-sidebar-item">
+                        <h4>产品推荐</h4>
+                        <p>男士护肤入门指南</p>
+                        <a href="#">查看清单 →</a>
+                    </div>
+                    <div class="guide-sidebar-item">
+                        <h4>摄影师专访</h4>
+                        <p>捕捉男性荷尔蒙瞬间</p>
+                        <a href="#">观看视频 →</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2>订阅我们的周刊</h2>
+                <p>获取最新的时尚资讯、摄影技巧与生活方式灵感，每周五发送。</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('感谢您的订阅！');">
+                    <input type="email" placeholder="请输入您的邮箱地址" class="newsletter-input" required>
+                    <button type="submit" class="btn">订阅</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="display:block; margin-bottom:15px;">极点<span>男色</span></a>
+                    <p>专注于男性审美与潮流文化的深度探索平台，连接每一位追求品质生活的现代男性。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">品牌故事</a></li>
+                        <li><a href="#">编辑团队</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>内容栏目</h4>
+                    <ul>
+                        <li><a href="#">摄影作品</a></li>
+                        <li><a href="#">时尚专栏</a></li>
+                        <li><a href="#">健身干货</a></li>
+                        <li><a href="#">生活方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律声明</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">版权声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 极点男色 版权所有. 仅供展示用途，请遵守当地法律法规。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
