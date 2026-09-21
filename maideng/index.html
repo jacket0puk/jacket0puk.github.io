@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迈登 - 智能工业机器人与自动化解决方案服务商</title>
+    <meta name="description" content="迈登专注于为制造业提供智能工业机器人、自动化生产线集成及工业物联网解决方案。提供机器人本体、控制系统及定制化自动化服务，助力企业实现高效、柔性化生产转型。">
+    <meta name="keywords" content="迈登,工业机器人,自动化解决方案,智能制造,迈登机器人">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --primary-dark: #004494;
+            --accent-color: #00a8cc;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .hero-text p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .stat-card {
+            position: absolute;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stat-card.top-right {
+            top: -20px;
+            right: -20px;
+        }
+
+        .stat-card.bottom-left {
+            bottom: -20px;
+            left: -20px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 8px;
+            background: var(--bg-light);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-color: var(--border-color);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 86, 179, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-icon svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Products Section */
+        .products {
+            background-color: var(--bg-light);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Applications Section */
+        .applications {
+            background-color: var(--bg-white);
+        }
+
+        .app-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .app-tab {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .app-tab.active, .app-tab:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .app-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .app-content.active {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .app-text h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .app-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .app-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .app-list li::before {
+            content: '✔';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .app-image img {
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-white:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-brand p {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text p {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .app-content.active {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand p {
+                margin: 0 auto 1.5rem;
+            }
+
+            .stat-card {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#0056b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#0056b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#0056b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                迈登<span>科技</span>
+            </a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#" class="nav-link active">首页</a></li>
+                    <li><a href="#products" class="nav-link">产品中心</a></li>
+                    <li><a href="#solutions" class="nav-link">解决方案</a></li>
+                    <li><a href="#industries" class="nav-link">行业应用</a></li>
+                    <li><a href="#about" class="nav-link">关于迈登</a></li>
+                    <li><a href="#contact" class="nav-link">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>赋能智能制造，驱动工业未来</h1>
+                <p>迈登提供全方位的工业机器人自动化解决方案，从核心部件到系统集成，助力企业降本增效，实现数字化转型。</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">探索产品</a>
+                    <a href="#contact" class="btn btn-outline">获取方案</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://picsum.photos/seed/robotics/600/400" alt="智能工业机器人生产线">
+                <div class="stat-card top-right">
+                    <div>
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">客户满意度</div>
+                    </div>
+                </div>
+                <div class="stat-card bottom-left">
+                    <div>
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">交付案例</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features">
+        <div class="container">
+            <div class="section-header">
+                <h2>核心优势</h2>
+                <p>为什么选择迈登作为您的自动化合作伙伴</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3>高效能核心</h3>
+                    <p>采用先进的伺服控制算法与高精度减速器，确保机器人运行平稳、响应迅速，大幅提升生产效率。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3>安全可靠</h3>
+                    <p>通过多重安全防护设计，符合国际安全标准，为工厂人员提供全天候的安全保障。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3>灵活定制</h3>
+                    <p>提供模块化设计，根据客户产线需求进行快速配置与深度定制，适应多样化的生产场景。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>产品矩阵</h2>
+                <p>从机械臂到控制系统，一站式工业自动化设备</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">热销</span>
+                        <img src="https://picsum.photos/seed/robotarm/400/300" alt="迈登六轴机械臂">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">核心部件</span>
+                        <h3 class="product-title">迈登 MD-6X 系列六轴机器人</h3>
+                        <p class="product-desc">负载6kg，重复定位精度±0.02mm，适用于精密装配、焊接及喷涂作业。</p>
+                        <div class="product-footer">
+                            <span class="product-link">查看详情 →</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/seed/control/400/300" alt="迈登机器人控制器">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">控制系统</span>
+                        <h3 class="product-title">迈登智能控制柜 MD-C200</h3>
+                        <p class="product-desc">集成视觉识别与运动控制功能，支持离线编程与云端调试，操作简单直观。</p>
+                        <div class="product-footer">
+                            <span class="product-link">查看详情 →</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">新品</span>
+                        <img src="https://picsum.photos/seed/gripper/400/300" alt="气动夹爪">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">末端执行器</span>
+                        <h3 class="product-title">自适应柔性夹爪系列</h3>
+                        <p class="product-desc">模仿人手抓取，适用于异形工件与易碎品，有效降低破损率。</p>
+                        <div class="product-footer">
+                            <span class="product-link">查看详情 →</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/seed/vision/400/300" alt="视觉系统">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">视觉系统</span>
+                        <h3 class="product-title">迈登工业视觉相机 M-Vision</h3>
+                        <p class="product-desc">高精度2D/3D视觉检测，实现零件自动定位、尺寸测量与缺陷识别。</p>
+                        <div class="product-footer">
+                            <span class="product-link">查看详情 →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn btn-outline">浏览全部产品</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="section applications" id="solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2>行业解决方案</h2>
+                <p>深入理解行业痛点，提供精准的自动化升级路径</p>
+            </div>
+            <div class="app-tabs">
+                <div class="app-tab active" onclick="openApp(event, 'auto')">汽车制造</div>
+                <div class="app-tab" onclick="openApp(event, 'electronics')">3C电子</div>
+                <div class="app-tab" onclick="openApp(event, 'food')">食品医药</div>
+                <div class="app-tab" onclick="openApp(event, 'logistics')">仓储物流</div>
+            </div>
+
+            <div id="auto" class="app-content active">
+                <div class="app-text">
+                    <h3>汽车制造自动化</h3>
+                    <p>汽车制造对生产节拍与一致性要求极高。迈登为汽车行业提供焊装、涂装及总装环节的全自动化工装解决方案。</p>
+                    <ul class="app-list">
+                        <li>车身焊接机器人工作站</li>
+                        <li>零部件自动分拣与码垛</li>
+                        <li>整车喷漆自动化产线</li>
+                        <li>车灯装配与检测系统</li>
+                    </ul>
+                </div>
+                <div class="app-image">
+                    <img src="https://picsum.photos/seed/car/600/400" alt="汽车制造自动化">
+                </div>
+            </div>
+
+            <div id="electronics" class="app-content">
+                <div class="app-text">
+                    <h3>3C电子精密组装</h3>
+                    <p>针对电子行业微型化、高精度特点，提供高动态响应机器人与视觉引导系统，实现手机、平板等产品的自动化组装。</p>
+                    <ul class="app-list">
+                        <li>手机屏幕贴合与组装</li>
+                        <li>电路板插件与焊接</li>
+                        <li>精密零部件检测</li>
+                        <li>电池自动贴标</li>
+                    </ul>
+                </div>
+                <div class="app-image">
+                    <img src="https://picsum.photos/seed/phone/600/400" alt="3C电子组装">
+                </div>
+            </div>
+
+            <div id="food" class="app-content">
+                <div class="app-text">
+                    <h3>食品医药洁净产线</h3>
+                    <p>符合GMP标准的食品医药自动化设备，保障生产环境无菌，实现包装、码垛与检测的连续化作业。</p>
+                    <ul class="app-list">
+                        <li>饮料灌装与旋盖</li>
+                        <li>药品自动包装</li>
+                        <li>食品码垛与AGV搬运</li>
+                        <li>洁净室环境机器人</li>
+                    </ul>
+                </div>
+                <div class="app-image">
+                    <img src="https://picsum.photos/seed/food/600/400" alt="食品医药自动化">
+                </div>
+            </div>
+
+            <div id="logistics" class="app-content">
+                <div class="app-text">
+                    <h3>智能仓储物流</h3>
+                    <p>结合机器人与智能调度系统，构建高效、柔性的仓储物流中心，提升出入库效率，降低人工成本。</p>
+                    <ul class="app-list">
+                        <li>自动导引车（AGV）调度</li>
+                        <li>立体仓库堆垛机集成</li>
+                        <li>快递分拣与打包</li>
+                        <li>无人搬运解决方案</li>
+                    </ul>
+                </div>
+                <div class="app-image">
+                    <img src="https://picsum.photos/seed/warehouse/600/400" alt="智能仓储物流">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>准备好升级您的生产线了吗？</h2>
+            <p>迈登专家团队随时待命，为您提供免费的现场评估与定制化方案设计。</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="#" class="btn btn-white">立即咨询</a>
+                <a href="#" class="btn btn-outline" style="border-color: white; color: white;">下载产品手册</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                            <path d="M2 17L12 22L22 17"/>
+                            <path d="M2 12L12 17L22 12"/>
+                        </svg>
+                        迈登科技
+                    </h3>
+                    <p>迈登致力于成为中国领先的工业自动化解决方案提供商，通过技术创新推动制造业向智能化、数字化迈进。</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#">微信</a>
+                        <a href="#">微博</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>产品中心</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">工业机器人</a></li>
+                        <li><a href="#">控制系统</a></li>
+                        <li><a href="#">视觉系统</a></li>
+                        <li><a href="#">末端执行器</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>解决方案</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">汽车制造</a></li>
+                        <li><a href="#">3C电子</a></li>
+                        <li><a href="#">仓储物流</a></li>
+                        <li><a href="#">食品医药</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与服务</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">技术支持</a></li>
+                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">培训中心</a></li>
+                        <li><a href="#">下载中心</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 迈登科技有限公司 版权所有 | 隐私政策 | 使用条款</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Tab Switching Logic for Applications
+        function openApp(evt, appName) {
+            var i, appContent, tabLinks;
+            
+            // Hide all content
+            appContent = document.getElementsByClassName("app-content");
+            for (i = 0; i < appContent.length; i++) {
+                appContent[i].classList.remove("active");
+            }
+
+            // Remove active class from tabs
+            tabLinks = document.getElementsByClassName("app-tab");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+            }
+
+            // Show current content and add active class to tab
+            document.getElementById(appName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navMenu').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+                          </html>
