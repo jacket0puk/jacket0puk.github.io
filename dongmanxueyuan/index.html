@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动漫学院-系统化动漫技能培训与职业发展平台</title>
+    <meta name="description" content="动漫学院提供专业的动漫绘画、分镜设计、原画制作及后期合成培训。涵盖手绘板、赛璐璐上色、人体结构、透视原理等核心课程，助力零基础学员与进阶创作者实现职业梦想。">
+    <meta name="keywords" content="动漫学院,动漫培训,原画设计,二次元绘画,插画培训,动画制作">
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --primary-hover: #5649c0;
+            --secondary-color: #00cec9;
+            --dark-bg: #1e1e2e;
+            --card-bg: #2d2d44;
+            --text-main: #ffffff;
+            --text-muted: #a0a0b0;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(30, 30, 46, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--secondary-color);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 100px 0 80px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.3) 0%, rgba(30, 30, 46, 0) 70%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #a0a0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--secondary-color);
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: #252538;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(108, 92, 231, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 80px 0;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .course-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-thumb {
+            height: 180px;
+            background-color: #3a3a52;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .course-card:hover .course-thumb img {
+            transform: scale(1.05);
+        }
+
+        .course-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 206, 201, 0.9);
+            color: #1e1e2e;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .course-info {
+            padding: 20px;
+        }
+
+        .course-info h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .btn-link {
+            font-size: 12px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .btn-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Process Section */
+        .process {
+            padding: 80px 0;
+            background-color: #252538;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--dark-bg);
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .step-item h4 {
+            margin-bottom: 10px;
+        }
+
+        .step-item p {
+            font-size: 14px;
+            color: var(--text-muted);
+            padding: 0 10px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            display: none;
+            line-height: 1.6;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #16162a;
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 15px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .process-steps::before {
+                width: 2px;
+                height: 100%;
+                left: 25px;
+                top: 0;
+            }
+            .step-number {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>◆</span> 动漫学院
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#courses">精选课程</a>
+                <a href="#features">教学特色</a>
+                <a href="#process">学习路径</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#contact" class="cta-btn">立即咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>从零开始，掌握二次元创作核心技能</h1>
+                    <p>动漫学院致力于为热爱绘画的学员提供系统化的原画设计、分镜制作与后期合成课程。无论你是零基础小白还是寻求进阶的创作者，这里都有适合你的成长路径。</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: flex-start;">
+                        <a href="#courses" class="cta-btn" style="padding: 12px 30px; font-size: 16px;">浏览课程</a>
+                        <a href="#process" style="padding: 12px 30px; border: 1px solid rgba(255,255,255,0.2); border-radius: 30px; font-size: 16px;">了解流程</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>5000+</h3>
+                            <p>毕业学员</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>98%</h3>
+                            <p>就业满意率</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>专业讲师</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/animeart/600/400" alt="动漫原画作品展示">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择动漫学院？</h2>
+                    <p>我们不仅仅是教画画，更是培养未来的职业画师</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>系统化课程体系</h3>
+                        <p>从线条练习到色彩构成，从人体结构到透视原理，建立完整的知识框架，拒绝碎片化学习。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">👨‍🏫</div>
+                        <h3>行业资深导师</h3>
+                        <p>授课老师均来自知名动画公司、游戏大厂，拥有丰富的实战经验和教学经验。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">💻</div>
+                        <h3>实战项目驱动</h3>
+                        <p>模拟真实商业项目流程，学员在课程中完成原创角色设计、场景绘制等实战作业。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>1对1职业指导</h3>
+                        <p>提供简历修改、作品集包装及面试技巧培训，全方位助力学员顺利入职。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="courses">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门课程推荐</h2>
+                    <p>针对不同职业方向，定制专属技能提升方案</p>
+                </div>
+                <div class="course-grid">
+                    <!-- Course 1 -->
+                    <article class="course-card">
+                        <div class="course-thumb">
+                            <span class="course-tag">热门</span>
+                            <img src="https://picsum.photos/seed/anime1/400/300" alt="日系插画入门">
+                        </div>
+                        <div class="course-info">
+                            <h3>日系插画零基础速成班</h3>
+                            <div class="course-meta">
+                                <span>120 课时</span>
+                                <span>适合新手</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">¥ 2999</span>
+                                <a href="#" class="btn-link">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Course 2 -->
+                    <article class="course-card">
+                        <div class="course-thumb">
+                            <span class="course-tag">进阶</span>
+                            <img src="https://picsum.photos/seed/anime2/400/300" alt="原画角色设计">
+                        </div>
+                        <div class="course-info">
+                            <h3>商业原画角色设计实战</h3>
+                            <div class="course-meta">
+                                <span>80 课时</span>
+                                <span>需基础</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">¥ 3999</span>
+                                <a href="#" class="btn-link">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Course 3 -->
+                    <article class="course-card">
+                        <div class="course-thumb">
+                            <span class="course-tag">设计</span>
+                            <img src="https://picsum.photos/seed/anime3/400/300" alt="场景概念设计">
+                        </div>
+                        <div class="course-info">
+                            <h3>游戏场景概念设计全解</h3>
+                            <div class="course-meta">
+                                <span>100 课时</span>
+                                <span>进阶课程</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">¥ 3499</span>
+                                <a href="#" class="btn-link">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Course 4 -->
+                    <article class="course-card">
+                        <div class="course-thumb">
+                            <span class="course-tag">动漫</span>
+                            <img src="https://picsum.photos/seed/anime4/400/300" alt="分镜制作">
+                        </div>
+                        <div class="course-info">
+                            <h3>动画分镜与脚本创作</h3>
+                            <div class="course-meta">
+                                <span>60 课时</span>
+                                <span>导演方向</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">¥ 2599</span>
+                                <a href="#" class="btn-link">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="process">
+            <div class="container">
+                <div class="section-header">
+                    <h2>学习成长路径</h2>
+                    <p>清晰的职业规划，助你少走弯路</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h4>基础夯实</h4>
+                        <p>素描、色彩、透视与人体结构，构建绘画的地基。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h4>风格确立</h4>
+                        <p>选择日系、美式或其他风格，掌握对应的造型语言。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h4>技法精进</h4>
+                        <p>深入光影渲染、材质表现及复杂场景的构图技巧。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h4>商业实战</h4>
+                        <p>完成真实商业项目，积累作品集，对接就业资源。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                    <p>解答关于课程、报名及学习方式的疑问</p>
+                </div>
+                
+                <div class="faq-item active">
+                    <div class="faq-question">我没有任何绘画基础，可以报名吗？ <span>+</span></div>
+                    <div class="faq-answer">
+                        完全可以。我们的零基础课程专门针对完全不懂绘画的学员设计，从最基础的握笔姿势和线条练习开始，手把手教学，确保每位学员都能跟上进度。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">课程是录播还是直播？ <span>+</span></div>
+                    <div class="faq-answer">
+                        我们提供双模式学习。核心技法课为高清录播，方便随时复习；直播答疑课则由导师亲自解答学员作业问题，并分享行业最新动态。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">学习期间可以使用电脑吗？ <span>+</span></div>
+                    <div class="faq-answer">
+                        当然。虽然绘画主要使用数位板，但我们也教授PS、SAI等软件的快捷键操作和图层管理技巧，电脑操作能力是现代画师的必备技能。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">毕业后能获得什么证书？ <span>+</span></div>
+                    <div class="faq-answer">
+                        完成课程并通过考核后，我们将颁发结业证书。此外，优秀学员将有机会获得我们的推荐信，直接对接合作企业的实习与招聘机会。
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="#" class="logo">
+                        <span>◆</span> 动漫学院
+                    </a>
+                    <p>专注于二次元美术教育的专业平台，致力于培养高素质的动漫与游戏原画人才。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">学院简介</a></li>
+                        <li><a href="#">师资团队</a></li>
+                        <li><a href="#">媒体报道</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>课程服务</h4>
+                    <ul>
+                        <li><a href="#">插画培训</a></li>
+                        <li><a href="#">原画设计</a></li>
+                        <li><a href="#">职业认证</a></li>
+                        <li><a href="#">企业内训</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">咨询热线：400-123-4567</a></li>
+                        <li><a href="#">邮箱：contact@anime-academy.com</a></li>
+                        <li><a href="#">地址：创意园区科技路88号</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 动漫学院 版权所有 | 仅供演示</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                // Toggle icon
+                const icon = item.querySelector('span');
+                icon.textContent = parent.classList.contains('active') ? '-' : '+';
+            });
+        });
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+  </html>
